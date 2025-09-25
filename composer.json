@@ -1,0 +1,38 @@
+{
+  "name": "com-company/php-ubiflow-api-client",
+  "description": "Api client permettant d'utiliser les Api d'Ubiflow pour publier une annonce ou récupérer des contacts",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "ComCompany\\PhpUbiflowApiClient\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "ddesousa",
+      "email": "ddesousa@com-company.fr"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "phpstan/extension-installer": true,
+      "symfony/flex": true,
+      "symfony/runtime": true
+    },
+    "sort-packages": true
+  },
+  "require": {
+    "php": ">=8.3",
+    "psr/cache": "^3.0",
+    "symfony/http-client-contracts": "^2.5|^3.0",
+    "thecodingmachine/safe": "^3.3.0"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^3.76",
+    "phpstan/extension-installer": "^1.4",
+    "phpstan/phpstan": "^2.1",
+    "phpstan/phpstan-symfony": "^2.0",
+    "symplify/phpstan-rules": "^14.7",
+    "thecodingmachine/phpstan-safe-rule": "^1.4"
+  }
+}
