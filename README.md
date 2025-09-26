@@ -1,6 +1,20 @@
+[![License: AGPL v3](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
+[![PHP Version](https://img.shields.io/badge/PHP-8.3+-blue.svg)](https://www.php.net/releases/8.3/)
+[![Packagist](https://img.shields.io/packagist/v/com-company/php-ubiflow-api-client.svg)](https://packagist.org/packages/com-company/php-ubiflow-api-client)
+
 ### Client PHP pour l’API Ubiflow
 
-Client PHP permettant d’utiliser les API Ubiflow afin de publier des annonces et de récupérer les contacts e-mail.
+Ce client PHP permet d'interagir facilement avec les API Ubiflow pour publier des annonces immobilières ou automobiles, récupérer les contacts générés via les portails, et gérer la diffusion des annonces sur différents supports partenaires.
+
+Il s'adresse aux développeurs ou intégrateurs souhaitant intégrer les fonctionnalités d'Ubiflow dans un projet PHP (Symfony, Laravel, ou autre).
+
+### Sommaire
+
+1. [Pré-requis](#1-prérequis)
+2. [Installation du package](#2-installation-du-package)
+3. [Utilisation de l’API pour publier une annonce](#3-utilisation-de-lapi-pour-publier-une-annonce)
+4. [Utilisation de l’API pour récupérer des contacts](#4-utilisation-de-lapi-pour-récupérer-des-contacts)
+5. [Licence](#-licence)
 
 ### 1) Prérequis
 - PHP >= 8.3
@@ -239,3 +253,11 @@ final readonly class ImportUbiflowContactCommand
     }
 }
 ```
+
+
+### 📄 Licence
+
+Ce projet est sous licence [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.html).  
+Vous êtes libre de l'utiliser, le modifier et le redistribuer, à condition de respecter les termes de cette licence.
+
+Consultez le fichier [LICENSE](./LICENSE) pour plus de détails.

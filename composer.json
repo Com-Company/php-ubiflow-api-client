@@ -2,6 +2,13 @@
   "name": "com-company/php-ubiflow-api-client",
   "description": "Api client permettant d'utiliser les Api d'Ubiflow pour publier une annonce ou récupérer des contacts",
   "type": "library",
+  "license": "AGPL-3.0-or-later",
+  "homepage": "https://github.com/com-company/php-ubiflow-api-client",
+  "keywords": ["ubiflow", "api", "client", "php", "annonce"],
+  "support": {
+    "issues": "https://github.com/com-company/php-ubiflow-api-client/issues",
+    "source": "https://github.com/com-company/php-ubiflow-api-client"
+  },
   "autoload": {
     "psr-4": {
       "ComCompany\\PhpUbiflowApiClient\\": "src/"
