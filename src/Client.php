@@ -149,7 +149,7 @@ final class Client
         ]);
 
         if ($response->getStatusCode() > 300) {
-            throw new ValidationFailedException('BIC validation failed');
+            throw new ValidationFailedException('Erreur à la suppression. Code : '.$response->getStatusCode());
         }
 
         return 204 !== $response->getStatusCode() ? $response->toArray(false) : [];

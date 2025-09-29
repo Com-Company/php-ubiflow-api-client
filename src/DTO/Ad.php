@@ -19,7 +19,8 @@ final class Ad
     public function __construct(
         public ?int $id,
         public readonly string $reference,
-        private readonly float $rental,
+        private readonly Transaction $transaction,
+        private readonly float $price,
         private readonly int $housingType,
         private readonly string $title,
         private readonly string $description,
@@ -43,8 +44,8 @@ final class Ad
             'reference' => $this->reference,
             'status' => 'A',
             'transaction' => [
-                'code' => Transaction::RENT->value,
-                'price' => $this->rental,
+                'code' => $this->transaction->value,
+                'price' => $this->price,
                 'privatePrice' => false,
             ],
             'productType' => ['code' => $this->housingType],

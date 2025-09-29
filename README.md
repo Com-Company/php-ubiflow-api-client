@@ -125,6 +125,7 @@ namespace App\Service;
 use ComCompany\PhpUbiflowApiClient\Client;
 use ComCompany\PhpUbiflowApiClient\DTO\Ad;
 use ComCompany\PhpUbiflowApiClient\Enum\Data;
+use ComCompany\PhpUbiflowApiClient\Enum\Transaction;
 use ComCompany\PhpUbiflowApiClient\Enum\TypeProduit;
 
 class MonServiceDePublication
@@ -144,6 +145,7 @@ class MonServiceDePublication
         $ad = new Ad(
             $data->ubiflowId,
             $data->reference,
+            $data->isAchat ? Transaction::SALE : Transaction::RENT,
             $data->prixTTCAvecCharge,
             $data->typeUbiflow ?? TypeProduit::APPARTEMENT->value,
             $data->titreAnnonce,
