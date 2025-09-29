@@ -36,6 +36,7 @@ final class Client
     ) {
     }
 
+    /** @throws ResponseException */
     private function authenticate(): string
     {
         if ($this->token) {
@@ -140,7 +141,11 @@ final class Client
         return $response->toArray(false);
     }
 
-    /** @return array<mixed> */
+    /**
+     * @return array<mixed>
+     *
+     * @throws ResponseException
+     */
     private function delete(string $path): array
     {
         $token = $this->authenticate();
@@ -149,7 +154,7 @@ final class Client
         ]);
 
         if ($response->getStatusCode() > 300) {
-            throw new ValidationFailedException('Erreur à la suppression. Code : '.$response->getStatusCode());
+            throw new ResponseException('Erreur à la suppression. Code : '.$response->getStatusCode());
         }
 
         return 204 !== $response->getStatusCode() ? $response->toArray(false) : [];
@@ -197,6 +202,7 @@ final class Client
         return $portals;
     }
 
+    /** @throws ResponseException */
     public function publishAd(Ad $ad): Ad
     {
         $payload = [
@@ -224,6 +230,7 @@ final class Client
         return $ad;
     }
 
+    /** @throws ValidationFailedException */
     public function unpublishAd(Ad $ad): Ad
     {
         if (!$ad->id) {
@@ -306,6 +313,7 @@ final class Client
         $this->put('ad_publications/'.$adPublication->id, ['selected' => $selected]);
     }
 
+    /** @throws ValidationFailedException */
     public function removeAd(Ad $ad): Ad
     {
         if (!$ad->id) {
