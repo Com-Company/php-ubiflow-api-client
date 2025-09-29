@@ -24,7 +24,7 @@ final class Client
 
     private const string UBIFLOW_API_URL = 'https://api-classifieds.ubiflow.net/api/';
     private const string UBIFLOW_LOGIN_URL = 'https://auth.ubiflow.net/api/login_check';
-    private const string  UNIVERSE_CODE = 'universe.code';
+    private const string UNIVERSE_CODE = 'universe.code';
 
     public function __construct(
         private readonly HttpClientInterface $httpClient,

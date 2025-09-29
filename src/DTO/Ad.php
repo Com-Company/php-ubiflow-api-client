@@ -51,18 +51,18 @@ final class Ad
             'productType' => ['code' => $this->housingType],
             'title' => $this->title,
             'description' => $this->description,
-            'data' => iterator_to_array((function () {
+            'data' => iterator_to_array((static function () {
                 foreach ($this->data as $key => $value) {
                     yield ['code' => $key->value, 'value' => $value];
                 }
             })()),
             'mediaSupports' => [
-                'pictures' => array_map(fn ($picture) => ['sourceUrl' => $picture], $this->pictures),
+                'pictures' => array_map(static fn ($picture) => ['sourceUrl' => $picture], $this->pictures),
             ],
             'adPublications' => [
                 'adPublications' => [
                     array_map(
-                        fn (string $portal) => ['advertiserPublication' => ['portal' => ['code' => $portal]]],
+                        static fn (string $portal) => ['advertiserPublication' => ['portal' => ['code' => $portal]]],
                         $this->portals,
                     ),
                 ],
