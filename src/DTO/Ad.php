@@ -6,6 +6,7 @@ namespace ComCompany\PhpUbiflowApiClient\DTO;
 
 use ComCompany\PhpUbiflowApiClient\Enum\Data;
 use ComCompany\PhpUbiflowApiClient\Enum\Transaction;
+use ComCompany\PhpUbiflowApiClient\Enum\TypeProduit;
 
 final class Ad
 {
@@ -21,7 +22,7 @@ final class Ad
         public readonly string $reference,
         private readonly Transaction $transaction,
         private readonly float $price,
-        private readonly int $housingType,
+        private readonly TypeProduit $housingType,
         private readonly string $title,
         private readonly string $description,
         private readonly array $pictures,
@@ -48,10 +49,10 @@ final class Ad
                 'price' => $this->price,
                 'privatePrice' => false,
             ],
-            'productType' => ['code' => $this->housingType],
+            'productType' => ['code' => $this->housingType->value],
             'title' => $this->title,
             'description' => $this->description,
-            'data' => iterator_to_array((static function () {
+            'data' => iterator_to_array((function () {
                 foreach ($this->data as $key => $value) {
                     yield ['code' => $key->value, 'value' => $value];
                 }

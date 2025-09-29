@@ -234,7 +234,7 @@ final class Client
     public function unpublishAd(Ad $ad): Ad
     {
         if (!$ad->id) {
-            throw new ValidationFailedException('Impossible de retirer une publication d\'une annonce dans identifiant.');
+            throw new ValidationFailedException('Impossible de retirer une publication d\'une annonce sans identifiant.');
         }
 
         foreach ($this->getAdPublications($ad) as $adPublication) {
@@ -317,7 +317,7 @@ final class Client
     public function removeAd(Ad $ad): Ad
     {
         if (!$ad->id) {
-            throw new ValidationFailedException('Impossible de supprimer une publication d\'une annonce dans identifiant.');
+            throw new ValidationFailedException('Impossible de supprimer une annonce sans identifiant.');
         }
 
         $this->delete('ads/'.$ad->id);

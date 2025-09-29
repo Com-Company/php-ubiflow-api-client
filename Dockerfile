@@ -10,6 +10,13 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug \
+    && pecl install -o -f redis \
+    && docker-php-ext-enable redis \
+    && pecl install pcov \
+    && docker-php-ext-enable pcov \
+
 # Installer Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 

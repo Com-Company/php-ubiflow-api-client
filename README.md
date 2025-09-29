@@ -147,7 +147,7 @@ class MonServiceDePublication
             $data->reference,
             $data->isAchat ? Transaction::SALE : Transaction::RENT,
             $data->prixTTCAvecCharge,
-            $data->typeUbiflow ?? TypeProduit::APPARTEMENT->value,
+            $data->typeUbiflow ?? TypeProduit::APPARTEMENT,
             $data->titreAnnonce,
             $data->descriptionAnnonce,
             array_map(fn ($picture) => $picture->urlPublicDeLImage, $data->pictures),

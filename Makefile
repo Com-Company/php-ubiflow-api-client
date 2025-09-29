@@ -19,3 +19,6 @@ install-vendors:
 fix:
 	docker compose run --rm php vendor/bin/php-cs-fixer fix --allow-risky=yes
 	docker compose run --rm php vendor/bin/phpstan analyse --no-progress -vvv --memory-limit=1024M
+
+test:
+	docker compose run --rm php php -d xdebug.mode=coverage vendor/bin/phpunit --coverage-html coverage
