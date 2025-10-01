@@ -15,7 +15,7 @@ RUN pecl install xdebug \
     && pecl install -o -f redis \
     && docker-php-ext-enable redis \
     && pecl install pcov \
-    && docker-php-ext-enable pcov \
+    && docker-php-ext-enable pcov
 
 # Installer Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer

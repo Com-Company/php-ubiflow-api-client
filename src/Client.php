@@ -18,7 +18,7 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 use function Safe\json_encode;
 
-final class Client
+class Client
 {
     private ?string $token = null;
 
@@ -37,7 +37,7 @@ final class Client
     }
 
     /** @throws ResponseException */
-    private function authenticate(): string
+    protected function authenticate(): string
     {
         if ($this->token) {
             return $this->token;
@@ -75,7 +75,7 @@ final class Client
      *
      * @return array<mixed>
      */
-    private function get(string $path, array $query = [], bool $useCache = false): array
+    protected function get(string $path, array $query = [], bool $useCache = false): array
     {
         $item = null;
         if ($useCache && $this->cachePool) {
@@ -112,7 +112,7 @@ final class Client
      *
      * @return array<mixed>
      */
-    private function post(string $path, array $json): array
+    protected function post(string $path, array $json): array
     {
         $token = $this->authenticate();
 
@@ -129,7 +129,7 @@ final class Client
      *
      * @return array<mixed>
      */
-    private function put(string $path, array $json): array
+    protected function put(string $path, array $json): array
     {
         $token = $this->authenticate();
 
@@ -146,7 +146,7 @@ final class Client
      *
      * @throws ResponseException
      */
-    private function delete(string $path): array
+    protected function delete(string $path): array
     {
         $token = $this->authenticate();
         $response = $this->httpClient->request('DELETE', self::UBIFLOW_API_URL.$path, [
