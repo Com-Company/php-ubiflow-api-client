@@ -1,6 +1,7 @@
 [![License: AGPL v3](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 [![PHP Version](https://img.shields.io/badge/PHP-8.3+-blue.svg)](https://www.php.net/releases/8.3/)
 [![Packagist](https://img.shields.io/packagist/v/com-company/php-ubiflow-api-client.svg)](https://packagist.org/packages/com-company/php-ubiflow-api-client)
+![Tests](https://github.com/com-company/php-ubiflow-api-client/actions/workflows/tests.yml/badge.svg)
 
 ### Client PHP pour l’API Ubiflow
 
